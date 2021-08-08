@@ -167,5 +167,15 @@
     "key": "space",
     "command": "whichkey.show",
     "when": "neovim.mode != 'insert' && !terminalFocus && !viewContainer.workbench.view.extensions.enabled"
+  },
+  {
+    "key": "ctrl+j",
+    "command": "cursorPageDown",
+    "when": "editorTextFocus && neovim.ctrlKeysNormal"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "cursorPageUp",
+    "when": "editorTextFocus && neovim.ctrlKeysNormal"
   }
 ]

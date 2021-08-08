@@ -964,5 +964,9 @@
       "type": "command",
       "command": "workbench.action.toggleZenMode"
     }
-  ]
+  ],
+  "editor.minimap.enabled": false,
+  "editor.renderWhitespace": "none",
+  "window.menuBarVisibility": "toggle",
+  "workbench.activityBar.visible": false
 }
