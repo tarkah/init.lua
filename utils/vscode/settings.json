@@ -1,5 +1,5 @@
 {
-  "workbench.colorTheme": "Monokai Pro",
+  "workbench.colorTheme": "Dracula",
   "workbench.iconTheme": "Monokai Pro Icons",
   "telemetry.enableTelemetry": false,
   "telemetry.enableCrashReporter": false,
@@ -445,6 +445,13 @@
       "name": "LSP...",
       "type": "bindings",
       "bindings": [
+        {
+          "key": "m",
+          "name": "Expand Macro",
+          "type": "command",
+          "command": "rust-analyzer.expandMacro",
+          "when": "editorTextFocus"
+        },
         {
           "key": ";",
           "name": "Refactor",
@@ -968,5 +975,74 @@
   "editor.minimap.enabled": false,
   "editor.renderWhitespace": "none",
   "window.menuBarVisibility": "toggle",
-  "workbench.activityBar.visible": false
+  "workbench.activityBar.visible": false,
+  "security.workspace.trust.untrustedFiles": "open",
+  "gitlens.codeLens.recentChange.enabled": false,
+  "gitlens.currentLine.enabled": false,
+  "gitlens.hovers.currentLine.over": "line",
+  "gitlens.codeLens.enabled": false,
+  "gitlens.statusBar.enabled": false,
+  "gitlens.hovers.enabled": false,
+  "gitlens.menus": {
+    "editor": {
+      "blame": false,
+      "clipboard": true,
+      "compare": true,
+      "history": false,
+      "remote": false
+    },
+    "editorGroup": false,
+    "editorTab": {
+      "clipboard": true,
+      "compare": true,
+      "history": true,
+      "remote": true
+    },
+    "explorer": {
+      "clipboard": true,
+      "compare": true,
+      "history": true,
+      "remote": true
+    },
+    "scm": {
+      "authors": true
+    },
+    "scmGroupInline": {
+      "stash": true
+    },
+    "scmGroup": {
+      "compare": true,
+      "openClose": true,
+      "stash": true
+    },
+    "scmItem": {
+      "clipboard": true,
+      "compare": true,
+      "history": true,
+      "remote": false,
+      "stash": true
+    }
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "dart.sdkPath": "/opt/dart-sdk",
+  "[dart]": {
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true,
+    "editor.rulers": [
+      80
+    ],
+    "editor.selectionHighlight": false,
+    "editor.suggest.snippetsPreventQuickSuggestions": false,
+    "editor.suggestSelection": "first",
+    "editor.tabCompletion": "onlySnippets",
+    "editor.wordBasedSuggestions": false
+  },
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  }
 }
