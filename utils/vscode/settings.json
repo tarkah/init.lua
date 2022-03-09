@@ -1,8 +1,7 @@
 {
   "workbench.colorTheme": "Dracula",
   "workbench.iconTheme": "Monokai Pro Icons",
-  "telemetry.enableTelemetry": false,
-  "telemetry.enableCrashReporter": false,
+  "telemetry.telemetryLevel": "off",
   "editor.formatOnSave": true,
   "editor.lineNumbers": "relative",
   "explorer.confirmDelete": false,
@@ -1044,5 +1043,27 @@
   },
   "[json]": {
     "editor.defaultFormatter": "vscode.json-language-features"
-  }
+  },
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "**/Thumbs.db": true,
+    "**/node_modules": true
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "redhat.telemetry.enabled": false,
+  "[yaml]": {
+    "editor.defaultFormatter": "redhat.vscode-yaml"
+  },
+  "yaml.format.printWidth": 100,
+  "explorer.confirmDragAndDrop": false,
+  "editor.unicodeHighlight.ambiguousCharacters": false
 }
