@@ -24,7 +24,27 @@ local opts = {
             ["rust-analyzer"] = {
                 -- enable clippy on save
                 checkOnSave = {
-                    command = "clippy"
+                    overrideCommand = {
+                        "cargo", 
+                        "clippy", 
+                        "--all", 
+                        "--message-format=json",
+                        "--",
+                        "-D", "warnings",
+                        "-A", "clippy::too_many_arguments",
+                        "-A", "clippy::large_enum_variant",
+                        "-A", "clippy::inherent_to_string",
+                        "-A", "clippy::result_unit_err",
+                        "-A", "clippy::module_inception",
+                        "-A", "clippy::should_implement_trait",
+                        "-A", "clippy::mutable_key_type",
+                        "-A", "clippy::from_over_into",
+                        "-A", "clippy::enum_variant_names",
+                        "-A", "clippy::type_complexity",
+                        "-A", "clippy::upper_case_acronyms",
+                        "-A", "clippy::redundant_closure",
+                        "-A", "clippy::many-single-char-names",
+                    },
                 },
             }
         }
