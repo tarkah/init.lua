@@ -27,6 +27,7 @@ wk.register({
       d = { "<cmd>lua vim.lsp.buf.definition()<CR>", "Definition" },
       R = { "<cmd>lua vim.lsp.buf.rename()<CR>", "Rename" },
       s = { "<cmd>lua require'telescope.builtin'.lsp_document_symbols{}<CR>", "Go to Symbol" },
+      D = { "<cmd> lua require'telescope.builtin'.diagnostics{}<CR>", "Diagnostics" },
   },
   f = {
       name = "telescope",

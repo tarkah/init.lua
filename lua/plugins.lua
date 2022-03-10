@@ -36,6 +36,16 @@ return require('packer').startup(function(use)
     requires = { {'nvim-lua/plenary.nvim'} },
     config = function()
         require("telescope").setup {
+          defaults = {
+              initial_mode = "normal",
+              mappings = {
+                  n = {
+                      ["<C-j>"] = "preview_scrolling_down",
+                      ["<C-k>"] = "preview_scrolling_up",
+                      ["<C-c>"] = "close",
+                  },
+              },
+          },
           extensions = {
             ["ui-select"] = {
               require("telescope.themes").get_dropdown {
