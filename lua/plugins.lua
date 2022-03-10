@@ -40,8 +40,6 @@ return require('packer').startup(function(use)
               initial_mode = "normal",
               mappings = {
                   n = {
-                      ["<C-j>"] = "preview_scrolling_down",
-                      ["<C-k>"] = "preview_scrolling_up",
                       ["<C-c>"] = "close",
                   },
               },

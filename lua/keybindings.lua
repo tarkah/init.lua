@@ -5,8 +5,6 @@ vim.g.mapleader = " "
 --- moving text
 map("v", "J", ":m '>+1<CR>gv=gv")
 map("v", "K", ":m '<-2<CR>gv=gv")
-map("n", "<C-j>", "<C-f>")
-map("n", "<C-k>", "<C-b>")
 
 --- LSP
 map("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>")
@@ -41,6 +39,6 @@ wk.register({
       name = "git",
       s = { "<cmd>lua require'telescope.builtin'.git_status{}<CR>", "status" },
       c = { "<cmd>lua require'telescope.builtin'.git_commits{}<CR>", "commits" },
-      d = { "<cmd>Gdiffsplit<cr>", "diffsplit" },
+      d = { "<cmd>Gvdiffsplit<cr>", "diffsplit" },
   }
 }, { prefix = "<leader>" })
