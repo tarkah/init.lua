@@ -35,5 +35,11 @@ wk.register({
       g = { "<cmd>Telescope live_grep<cr>", "Grep"}
   },
   e = { "<cmd>NvimTreeToggle<CR>", "Toggle Explorer" },
-  d = { "<cmd>bd<CR>", "Close Buffer" }
+  d = { "<cmd>bd<CR>", "Close Buffer" },
+  g = {
+      name = "git",
+      s = { "<cmd>lua require'telescope.builtin'.git_status{}<CR>", "status" },
+      c = { "<cmd>lua require'telescope.builtin'.git_commits{}<CR>", "commits" },
+      d = { "<cmd>Gdiffsplit<cr>", "diffsplit" },
+  }
 }, { prefix = "<leader>" })

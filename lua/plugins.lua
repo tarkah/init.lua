@@ -144,6 +144,12 @@ return require('packer').startup(function(use)
     config = function() require'nvim-tree'.setup {} end
   }
 
+  -- Sneak
+  use 'justinmk/vim-sneak'
+
+  -- Git
+  use 'tpope/vim-fugitive'
+
   if packer_bootstrap then
     require('packer').sync()
   end
