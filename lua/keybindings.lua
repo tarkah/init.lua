@@ -40,5 +40,12 @@ wk.register({
       s = { "<cmd>lua require'telescope.builtin'.git_status{}<CR>", "status" },
       c = { "<cmd>lua require'telescope.builtin'.git_commits{}<CR>", "commits" },
       d = { "<cmd>Gvdiffsplit<cr>", "diffsplit" },
-  }
+  },
+  w = {
+      name = "window",
+      v = { "<cmd>vsplit<cr>", "vertical split" },
+      h = { "<cmd>split<cr>", "horizontal split" },
+      c = { "<cmd>close<cr>", "close" },
+  },
+  s = { "<cmd>w<cr>", "save" },
 }, { prefix = "<leader>" })
