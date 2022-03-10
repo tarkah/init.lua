@@ -1,5 +1,3 @@
-local nvim_lsp = require'lspconfig'
-
 local opts = {
     tools = {
         autoSetHints = true,

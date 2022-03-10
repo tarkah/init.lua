@@ -34,5 +34,6 @@ wk.register({
       b = { "<cmd>Telescope buffers<cr>", "Buffers"},
       g = { "<cmd>Telescope live_grep<cr>", "Grep"}
   },
-  e = { "<cmd>NvimTreeToggle<CR>", "Toggle Explorer" }
+  e = { "<cmd>NvimTreeToggle<CR>", "Toggle Explorer" },
+  d = { "<cmd>bd<CR>", "Close Buffer" }
 }, { prefix = "<leader>" })
