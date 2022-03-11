@@ -49,5 +49,9 @@ wk.register({
       h = { "<cmd>split<cr>", "horizontal split" },
       c = { "<cmd>close<cr>", "close" },
   },
-  s = { "<cmd>w<cr>", "save" },
+  s = {
+      name = "sessions",
+      l = { "<cmd>SessionManager load_last_session<cr>", "Last" },
+      s = { "<cmd>SessionManager load_session<cr>", "Select" },
+  },
 }, { prefix = "<leader>" })
