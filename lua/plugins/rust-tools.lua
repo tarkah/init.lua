@@ -30,7 +30,6 @@ local opts = {
                         "--all", 
                         "--message-format=json",
                         "--",
-                        "-D", "warnings",
                         "-A", "clippy::too_many_arguments",
                         "-A", "clippy::large_enum_variant",
                         "-A", "clippy::inherent_to_string",
