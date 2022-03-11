@@ -1,4 +1,12 @@
 local runtime_path = vim.split(package.path, ';')
+
+
+-- global diagnostics config
+vim.diagnostic.config({
+    virtual_text = false,
+})
+
+
 table.insert(runtime_path, "lua/?.lua")
 table.insert(runtime_path, "lua/?/init.lua")
 

@@ -102,7 +102,7 @@ return require('packer').startup(function(use)
                         end
                         return {
                             error = count[vim.diagnostic.severity.ERROR],
-                            warning = count[vim.diagnostic.severity.WARN],
+                            warn = count[vim.diagnostic.severity.WARN],
                             info = count[vim.diagnostic.severity.INFO],
                             hint = count[vim.diagnostic.severity.HINT],
                         }
