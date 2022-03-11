@@ -156,6 +156,14 @@ return require('packer').startup(function(use)
   -- Git
   use 'tpope/vim-fugitive'
 
+  -- Dashboard
+  use {
+    'goolord/alpha-nvim',
+    config = function ()
+        require'alpha'.setup(require'alpha.themes.dashboard'.config)
+    end
+  }
+
   if packer_bootstrap then
     require('packer').sync()
   end
