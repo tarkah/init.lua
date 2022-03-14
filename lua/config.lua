@@ -20,3 +20,9 @@ autocmd CursorHold * lua vim.diagnostic.open_float(nil, { focusable = false })
 cmd([[
 autocmd BufWritePre *.rs,*.lua lua vim.lsp.buf.formatting_sync(nil, 200)
 ]])
+
+-- update stale but unmodified buffers
+cmd([[
+set autoread
+autocmd FocusGained * checktime
+]])
