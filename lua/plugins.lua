@@ -71,15 +71,30 @@ return require('packer').startup(function(use)
   "folke/which-key.nvim",
   config = function()
       require("which-key").setup {
-          window = {
-              position = "bottom",
+          plugins = {
+              marks = true, -- shows a list of your marks on ' and `
+              registers = true, -- shows your registers on " in NORMAL or <C-r> in INSERT mode
+              -- the presets plugin, adds help for a bunch of default keybindings in Neovim
+              -- No actual key bindings are created
           },
-          triggers = {"<leader>"},
-        -- your configuration comes here
-        -- or leave it empty to use the default settings
-        -- refer to the configuration section below
+          window = {
+              border = "single", -- none, single, double, shadow
+              position = "bottom", -- bottom, top
+          },
       }
     end
+  }
+
+  -- minimap
+  use {
+      'wfxr/minimap.vim',
+      run = "cargo install --locked code-minimap",
+      cmd = {"Minimap", "MinimapClose", "MinimapToggle", "MinimapRefresh", "MinimapUpdateHighlight"},
+      config = function ()
+          vim.cmd ("let g:minimap_width = 10")
+          vim.cmd ("let g:minimap_auto_start = 1")
+          vim.cmd ("let g:minimap_auto_start_win_enter = 1")
+      end,
   }
 
   -- Status line
@@ -147,11 +162,23 @@ return require('packer').startup(function(use)
     requires = {
       'kyazdani42/nvim-web-devicons', -- optional, for file icon
     },
-    config = function() require'nvim-tree'.setup {} end
+    config = function() 
+        require'nvim-tree'.setup {
+            auto_close = true,
+            actions = {
+                open_file = {
+                    quit_on_open = true,
+                },
+            },
+        } 
+    end
   }
 
   -- Sneak
   use 'justinmk/vim-sneak'
+
+  -- Comment text in and out
+  use 'b3nj5m1n/kommentary'
 
   -- Git
   use 'tpope/vim-fugitive'
@@ -187,6 +214,23 @@ return require('packer').startup(function(use)
         })
     end
   }
+
+  -- tmux
+  use({
+      "aserowy/tmux.nvim",
+      config = function()
+          require("tmux").setup({
+              navigation = {
+                  -- enables default keybindings (C-hjkl) for normal mode
+                  enable_default_keybindings = true,
+              },
+              resize = {
+                  -- enables default keybindings (A-hjkl) for normal mode
+                  enable_default_keybindings = true,
+              }
+          })
+      end
+  })
 
   if packer_bootstrap then
     require('packer').sync()
