@@ -92,6 +92,11 @@ wk.register({
         c = {"<cmd>PackerCompile<cr>", "compile"},
         l = {"<cmd>PackerClean<cr>", "clean"}
     },
+    s = {
+        name = "session",
+        l = {"<cmd>SessionManager load_last_session<cr>", "last"},
+        s = {"<cmd>SessionManager load_session<cr>", "select"},
+    },
     v = {
         name = "vim",
         r = {":so $MYVIMRC<cr>", "reload init.lua"},
