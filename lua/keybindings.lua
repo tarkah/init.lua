@@ -83,7 +83,7 @@ wk.register({
         name = "git",
         s = {"<cmd>lua require'telescope.builtin'.git_status{}<CR>", "status"},
         c = {"<cmd>lua require'telescope.builtin'.git_commits{}<CR>", "commits"},
-        d = {"<cmd>Gvdiffsplit<cr>", "diffsplit"}
+        d = {"<cmd>DiffviewOpen -uno<cr>", "diffsplit"}
     },
     p = {
         name = "packer",
