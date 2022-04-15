@@ -17,7 +17,20 @@ return require('packer').startup(function(use)
   use {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate", config = [[ require('plugins/nvim-treesitter') ]]}
 
   -- Color
-  use {"christianchiarulli/nvcode-color-schemes.vim"}
+  use {
+    "sainnhe/gruvbox-material",
+    config = function()
+        vim.g.gruvbox_material_palette = "material"
+        vim.cmd([[
+            syntax on 
+            if (has("termguicolors"))
+              set termguicolors
+              hi LineNr ctermbg=NONE guibg=NONE
+            endif
+            colorscheme gruvbox-material
+        ]])
+    end
+  }
 
   -- Auto completion
   use {'hrsh7th/nvim-cmp', config = [[ require('plugins/nvim-cmp') ]]}
@@ -182,6 +195,10 @@ return require('packer').startup(function(use)
 
   -- Git
   use 'tpope/vim-fugitive'
+  use {
+      'sindrets/diffview.nvim',
+      requires = 'nvim-lua/plenary.nvim',
+  }
 
   -- Dashboard
   use {

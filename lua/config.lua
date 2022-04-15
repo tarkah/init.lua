@@ -1,16 +1,5 @@
 local cmd = vim.cmd
 
--- colors
-cmd('let g:nvcode_termcolors=256') -- configure nvcode-color-schemes
-cmd('syntax on') -- syntax highlighting
-cmd('colorscheme nord')
-cmd([[
-  if (has("termguicolors"))
-    set termguicolors
-    hi LineNr ctermbg=NONE guibg=NONE
-  endif
-]])
-
 -- hover diagnostics
 cmd([[
 autocmd CursorHold * lua vim.diagnostic.open_float(nil, { focusable = false })
