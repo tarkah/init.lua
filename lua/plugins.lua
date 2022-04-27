@@ -50,7 +50,6 @@ return require('packer').startup(function(use)
     config = function()
         require("telescope").setup {
           defaults = {
-              initial_mode = "normal",
               mappings = {
                   n = {
                       ["<C-c>"] = "close",
