@@ -1052,7 +1052,7 @@
     "**/Thumbs.db": true,
     "**/node_modules": true
   },
-  "workbench.colorTheme": "Nord",
+  "workbench.colorTheme": "Gruvbox Dark Medium",
   "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },

@@ -55,7 +55,8 @@ wk.register({
         e = {"<cmd>lua require'telescope.builtin'.diagnostics{}<CR>", "errors"},
         n = {"<cmd>lua vim.diagnostic.goto_next()<CR>", "next problem"},
         p = {"<cmd>lua vim.diagnostic.goto_prev()<CR>", "prev problem"},
-        a = {"<cmd>lua vim.lsp.buf.code_action()<CR>", "code action"}
+        a = {"<cmd>lua vim.lsp.buf.code_action()<CR>", "code action"},
+        u = {"<cmd>lua require'rust-tools.parent_module'.parent_module()<CR>", "up one module"}
     },
     c = {
         name = "+comment",
