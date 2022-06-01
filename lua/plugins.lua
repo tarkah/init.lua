@@ -56,6 +56,11 @@ return require('packer').startup(function(use)
                   },
               },
           },
+          pickers = {
+              diagnostics = {
+                  root_dir = "/home/tarkah/projects",
+              },
+          },
           extensions = {
             ["ui-select"] = {
               require("telescope.themes").get_dropdown {
@@ -125,7 +130,14 @@ return require('packer').startup(function(use)
                         local diagnostics = vim.diagnostic.get()
                         local count = { 0, 0, 0, 0 }
                         for _, diagnostic in ipairs(diagnostics) do
-                          count[diagnostic.severity] = count[diagnostic.severity] + 1
+                          local name = vim.api.nvim_buf_get_name(diagnostic.bufnr)
+                          local whitelist_dir = "/home/tarkah/projects"
+                          local allowed = string.sub(name, 1, #whitelist_dir) == whitelist_dir
+
+                          if allowed then
+                            count[diagnostic.severity] = count[diagnostic.severity] + 1
+                          end
+
                         end
                         return {
                             error = count[vim.diagnostic.severity.ERROR],
