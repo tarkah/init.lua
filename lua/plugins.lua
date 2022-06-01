@@ -122,6 +122,8 @@ return require('packer').startup(function(use)
         require('lualine').setup {
             sections = {
               lualine_b = {
+                'branch',
+                'diff',
                 {
                   'diagnostics',
                   -- .get() for project wide counts (repo uses .get(0) for buffer only)
@@ -151,6 +153,10 @@ return require('packer').startup(function(use)
               },
               lualine_c = {
                   {
+                    'filename',
+                    path = 1,
+                  },
+                  {
         			'lsp_progress',
                 	-- With spinner
                 	display_components = { 'lsp_client_name', 'spinner', { 'title', 'percentage', 'message' }},
@@ -169,6 +175,10 @@ return require('packer').startup(function(use)
                 	spinner_symbols = { '🌑 ', '🌒 ', '🌓 ', '🌔 ', '🌕 ', '🌖 ', '🌗 ', '🌘 ' },
                 }
               }
+            },
+            inactive_sections = {
+                lualine_c = {},
+                lualine_x = {'location'}
             }
         }
     end
