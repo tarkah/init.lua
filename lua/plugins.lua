@@ -187,7 +187,9 @@ return require('packer').startup(function(use)
   -- Tabs
   use {
     'romgrk/barbar.nvim',
-    requires = {'kyazdani42/nvim-web-devicons'}
+    requires = {'kyazdani42/nvim-web-devicons'},
+    disable = true,
+    opt = true,
   }
 
   -- Explorer
@@ -198,7 +200,6 @@ return require('packer').startup(function(use)
     },
     config = function() 
         require'nvim-tree'.setup {
-            auto_close = true,
             actions = {
                 open_file = {
                     quit_on_open = true,
